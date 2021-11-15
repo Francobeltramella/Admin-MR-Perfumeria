@@ -7,5 +7,21 @@ use Illuminate\Database\Eloquent\Model;
 
 class Rubro extends Model
 {
-    use HasFactory;
+    use HasFactory; 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var string[]
+     */
+    protected $fillable = [
+        'nombre',
+    ];
+
+
+
+    public function productos(){
+        return $this->hasMany(Producto::class);
+    }
+
+    
 }
